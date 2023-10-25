@@ -1,0 +1,55 @@
+<!--
+     Episode 1 Vue3 Abolsute Basics
+     Episode 2 Attribute Binding and Event Handling
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        html,body {
+            height: 100%;
+        }
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .text-red {
+            color: red;
+        }
+
+        .text-green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">  
+        <button :class="active? 'text-green':'text-red'" @click="toggle">Click Me!</button>           
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    active :false
+                }
+            },
+
+            methods:{
+                toggle() {
+                    this.active = !this.active;
+                }
+            }
+        }).mount('#app')
+
+
+    </script>
+</body>
+
+

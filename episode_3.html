@@ -1,0 +1,70 @@
+<!--
+    Episode 3
+    Lists, Conditionals,  and computed properties
+-->
+<!doctype html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Episode 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="h-full grid place-items-center">
+    <div id="app">
+
+        <section  v-if="inProgressAssigments.length">
+            <h2 class="font-bold mb-2">In Progress</h2>
+
+            <ul>
+
+                <li v-for="item in inProgressAssigments" :key="item.id">
+                    <label>
+                        {{item.name}}
+                        <input type="checkbox" v-model="item.complete"></li>
+                    </label>
+            </ul>
+        </section>
+
+
+        <section class="mt-8" v-if="completedAssigments.length">
+            <h2 class="font-bold mb-2">Completed</h2>
+
+            <ul>
+
+                <li v-for="item in completedAssigments" :key="item.id">
+                    <label>
+                        {{item.name}}
+                        <input type="checkbox" v-model="item.complete"></li>
+                    </label>
+            </ul>
+        </section>
+
+
+    </div>
+
+    <script>
+        let app = {
+            data() {
+                return {
+                    assigments: [
+                        { name: 'Finish project', complete: false, id :1},
+                        { name: 'Read chapter 4', complete: false, id:2},
+                        { name: 'Turn in homework', complete: false, id:3},
+                    ]
+                }
+            },
+            computed: {
+                inProgressAssigments() {
+                    return this.assigments.filter(x=> !x.complete);
+                },
+                completedAssigments() {
+                    return this.assigments.filter(x=>x.complete);
+                }
+            }
+        };
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
