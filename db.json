@@ -1,0 +1,23 @@
+{
+    "assignments" : [
+        { 
+            "name":"Finish project", "complete": false, "id":1 , "tag": "math"
+        },
+        { 
+            "name":"Read Chapter 3", "complete": false, "id":2 , "tag": "science"
+        },
+        { 
+            "name":"Read Chapter 12", "complete": false, "id":3 , "tag": "science"
+        },
+        { 
+            "name":"Complete chapter 2", "complete": false, "id":4 , "tag": "math"
+        },
+        { 
+            "name":"Finish project 3", "complete": false, "id":5 , "tag": "science"
+        },
+        { 
+            "name":"Write chapter 4", "complete": false, "id":6 , "tag": "math"
+        }
+    
+    ]
+}
